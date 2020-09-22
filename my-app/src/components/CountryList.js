@@ -7,8 +7,6 @@ import { Card, CardGroup, Container, Row, Col} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const CountryList = props => {
-
-    console.log(props);
   return (
     <ul>
       {props.items.map(item => (

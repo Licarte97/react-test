@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import CountryList from "../components/CountryList";
-
+import Input from "../components/Input";
 
 const Home =  () => {
-
+  let filteredCountries;
   const [loadedCountries, setLoadedCountries] = useState();
+  const [search, setSearch] = useState('');
+
 
   useEffect( () => {
     const sendRequest = async () => {
@@ -23,10 +25,21 @@ const Home =  () => {
     sendRequest();
   },[]);
 
+  if(loadedCountries)
+  {
+    console.log("searching loaded countries");
+    filteredCountries = loadedCountries.filter( country => {
+      return country.name.toLowerCase().includes( search.toLowerCase() )
+    })
+  };
+
+  const inputHandler = (e) => {
+    setSearch(e.target.value);
+  };
   return (
     <React.Fragment>
-
-      {loadedCountries && <CountryList items={loadedCountries} />}
+      <input type="text" placeholder="Search" onChange={inputHandler}></input>
+      {loadedCountries && <CountryList items={filteredCountries} />}
     </React.Fragment>
   );
 };
