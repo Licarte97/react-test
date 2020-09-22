@@ -5,3 +5,8 @@ a:link{
 ul {
   list-style-type: none;
 }
+
+.item-Container{
+  word-wrap: break-word;
+  width: 150px;
+}

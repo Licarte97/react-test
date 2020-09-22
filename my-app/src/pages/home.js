@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import CountryList from "../components/CountryList";
 import LoadingSpinner from "../components/UIElements/LoadingSpinner";
+import "./Home.css";
+import { Card, Container, Row} from 'react-bootstrap';
 
 const Home =  () => {
   let filteredCountries;
@@ -45,9 +47,14 @@ const Home =  () => {
   };
   return (
     <React.Fragment>
-      {isLoading && <LoadingSpinner asOverlay/>}
-      {!isLoading && <input type="text" placeholder="Search" onChange={inputHandler}></input>}
-      {!isLoading && loadedCountries && <CountryList items={filteredCountries} />}
+      <Container>
+        {isLoading && <LoadingSpinner asOverlay/>}
+        <div className="button-container">
+          {!isLoading && <input type="text" className="search-btn" placeholder="Search" onChange={inputHandler}></input>}
+        </div>
+        
+        {!isLoading && loadedCountries && <CountryList items={filteredCountries} />}
+      </Container>
     </React.Fragment>
   );
 };

@@ -3,8 +3,6 @@ import { useEffect, useState } from 'react';
 import { useParams, useHistory} from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 
-import "./CountryDetails.css";
-
 import Country from "../components/Country";
 const CountryDetails = () => {
 

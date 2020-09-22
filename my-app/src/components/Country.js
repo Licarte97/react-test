@@ -17,28 +17,26 @@ const Country = props => {
     <ul>
       {props.items.map(item => (
         <li>
-          <Container>
-              <Row>
-                  <Card style={{margin: "auto"}}>
-                    <Card.Img variant="top" src={item.flag} />
-                    <Card.Body className="country-card_body">
-                      {item.name}
-                      <br/>
-                      Time Zone: {item.timezones}
-                      <br/>
-                      Calling Code: +{item.callingCodes}
-                      <br/>
-                      Region: {item.region}
-                      <br/>
-                      Population: {item.population}
-                    </Card.Body>
-                  </Card>
-              </Row>
-              <Row>
-                <br/><br/>
-                <Button style={{margin: "auto"}} onClick={goBackHandler}>Go Back</Button>
-              </Row>
-          </Container>
+          <Row>
+              <Card style={{margin: "auto"}}>
+                <Card.Img variant="top" src={item.flag} />
+                <Card.Body className="country-card_body">
+                  {item.name}
+                  <br/>
+                  Time Zone: {item.timezones}
+                  <br/>
+                  Calling Code: +{item.callingCodes}
+                  <br/>
+                  Region: {item.region}
+                  <br/>
+                  Population: {item.population}
+                </Card.Body>
+              </Card>
+          </Row>
+          <Row>
+            <br/><br/>
+            <Button style={{margin: "auto"}} onClick={goBackHandler}>Go Back</Button>
+          </Row>
         </li>
       ))}
     </ul>

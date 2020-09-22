@@ -11,31 +11,28 @@ const CountryList = props => {
     <ul>
       {props.items.map(item => (
         <li>
-          <Container>
-            <Link to={`/${item.name}/details`}>
-              <Row>
-                <Col>
-                  <Card>
-                    <Card.Body>
-                      {/* <Card.Title>{item.name}</Card.Title> */}
-                      <Card.Body>
-                        {item.name}
-                        <br/>
-                        {item.timezones}
-                        <br/>
-                        +{item.callingCodes}
-                      </Card.Body>
-                    </Card.Body>
-                  </Card>
-                </Col>
-                <Col>
-                  <Card >
-                    <Card.Img variant="top" src={item.flag} />
-                  </Card>
-                </Col>
-              </Row>
-            </Link>
-          </Container>
+          <Card>
+            <Row>
+              <Col>
+                <Card.Body>
+                  {/* <Card.Title>{item.name}</Card.Title> */}
+                    {item.name}
+                    <br/>
+                    <div className="item-Container">
+                      {item.timezones }
+                    </div>
+                    
+                    <br/>
+                    +{item.callingCodes}
+                </Card.Body>
+              </Col>
+              <Col>
+                <Link to={`/${item.name}/details`}>
+                  <Card.Img variant="top" src={item.flag} />
+                </Link>
+              </Col>
+            </Row>
+            </Card>
         </li>
       ))}
     </ul>
