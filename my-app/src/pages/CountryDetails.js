@@ -1,6 +1,9 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory} from 'react-router-dom';
+import { Button } from 'react-bootstrap';
+
+import "./CountryDetails.css";
 
 import Country from "../components/Country";
 const CountryDetails = () => {
@@ -8,6 +11,7 @@ const CountryDetails = () => {
   let filteredCountries;
   const [loadedCountries, setLoadedCountries] = useState();
   const countryName = useParams().cName;
+  
 
   useEffect( () => {
     const sendRequest = async () => {
@@ -33,6 +37,8 @@ const CountryDetails = () => {
       return country.name.toLowerCase().includes( countryName.toLowerCase() )
     })
   };
+
+
 
   return (
     <React.Fragment>

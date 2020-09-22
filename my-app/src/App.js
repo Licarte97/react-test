@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-do
 import Home from './pages/Home';
 import CountryDetails from './pages/CountryDetails';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css'; //Bootstrap
 
 const App = () => {
   return <Router>
@@ -11,8 +12,8 @@ const App = () => {
       <Route path = "/" exact>
         <Home/>
       </Route>
-      <Route path = "/:cName/details" exact>
-        <CountryDetails/>
+      <Route path = "/:cName/details" exact component={CountryDetails}>
+        
       </Route>
       <Redirect to="/" />
     </Switch>

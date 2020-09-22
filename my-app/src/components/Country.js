@@ -2,9 +2,17 @@ import React from 'react';
 
 import "./Country.css";
 import { Card, Container, Row} from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { useHistory } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 
 const Country = props => {
+  const history = useHistory();
+
+
+  const goBackHandler = () => {
+    history.goBack();
+  };
+
   return (
     <ul>
       {props.items.map(item => (
@@ -25,6 +33,10 @@ const Country = props => {
                       Population: {item.population}
                     </Card.Body>
                   </Card>
+              </Row>
+              <Row>
+                <br/><br/>
+                <Button style={{margin: "auto"}} onClick={goBackHandler}>Go Back</Button>
               </Row>
           </Container>
         </li>
