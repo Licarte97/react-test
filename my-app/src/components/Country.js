@@ -1,7 +1,7 @@
 import React from 'react';
 
 import "./Country.css";
-import { Card, Container, Row} from 'react-bootstrap';
+import { Card, Row} from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 

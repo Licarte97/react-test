@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import CountryList from "../components/CountryList";
 import LoadingSpinner from "../components/UIElements/LoadingSpinner";
 import "./Home.css";
-import { Card, Container, Row} from 'react-bootstrap';
+import {Container} from 'react-bootstrap';
 
 const Home =  () => {
   let filteredCountries;

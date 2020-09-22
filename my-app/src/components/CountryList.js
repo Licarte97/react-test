@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 // import Card from './UIElements/Card';
 import './CountryList.css';
-import { Card, Container, Row, Col} from 'react-bootstrap';
+import { Card, Row, Col} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const CountryList = props => {

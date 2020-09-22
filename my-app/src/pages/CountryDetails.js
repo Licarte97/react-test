@@ -1,7 +1,6 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-import { useParams, useHistory} from 'react-router-dom';
-import { Button } from 'react-bootstrap';
+import { useParams} from 'react-router-dom';
 
 import Country from "../components/Country";
 const CountryDetails = () => {
@@ -9,6 +8,7 @@ const CountryDetails = () => {
   let filteredCountries;
   const [loadedCountries, setLoadedCountries] = useState();
   const countryName = useParams().cName;
+  const [error, setError] = useState(false);
   
 
   useEffect( () => {
@@ -22,6 +22,7 @@ const CountryDetails = () => {
 
       } catch(err){
         console.log(err);
+        setError(err.message);
       }
       
     };
