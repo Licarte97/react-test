@@ -26,7 +26,6 @@ const Home =  () => {
 
   if(loadedCountries)
   {
-    console.log("searching loaded countries");
     filteredCountries = loadedCountries.filter( country => {
       return country.name.toLowerCase().includes( search.toLowerCase() )
     })
