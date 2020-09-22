@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 // import Card from './UIElements/Card';
 import './CountryList.css';
-import { Card, CardGroup, Container, Row, Col} from 'react-bootstrap';
+import { Card, Container, Row, Col} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const CountryList = props => {
@@ -12,27 +12,29 @@ const CountryList = props => {
       {props.items.map(item => (
         <li>
           <Container>
-            <Row>
-              <Col>
-                <Card>
-                  <Card.Body>
-                    {/* <Card.Title>{item.name}</Card.Title> */}
+            <Link to={`/${item.name}/details`}>
+              <Row>
+                <Col>
+                  <Card>
                     <Card.Body>
-                      {item.name}
-                      <br/>
-                      {item.timezones}
-                      <br/>
-                      +{item.callingCodes}
+                      {/* <Card.Title>{item.name}</Card.Title> */}
+                      <Card.Body>
+                        {item.name}
+                        <br/>
+                        {item.timezones}
+                        <br/>
+                        +{item.callingCodes}
+                      </Card.Body>
                     </Card.Body>
-                  </Card.Body>
-                </Card>
-              </Col>
-              <Col>
-                <Card>
-                  <Card.Img variant="top" src={item.flag} />
-                </Card>
-              </Col>
-            </Row>
+                  </Card>
+                </Col>
+                <Col>
+                  <Card >
+                    <Card.Img variant="top" src={item.flag} />
+                  </Card>
+                </Col>
+              </Row>
+            </Link>
           </Container>
         </li>
       ))}

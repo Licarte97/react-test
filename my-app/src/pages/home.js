@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import CountryList from "../components/CountryList";
-import Input from "../components/Input";
 
 const Home =  () => {
   let filteredCountries;
