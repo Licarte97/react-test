@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import CountryList from "../components/CountryList";
 
+
 const Home =  () => {
 
   const [loadedCountries, setLoadedCountries] = useState();
@@ -24,6 +25,7 @@ const Home =  () => {
 
   return (
     <React.Fragment>
+
       {loadedCountries && <CountryList items={loadedCountries} />}
     </React.Fragment>
   );
